@@ -1,0 +1,226 @@
+<html>
+    <head>
+        <title>Aimer Labs</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="css/main.css">
+    </head>
+    <body>
+        <div style="
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh;
+            max-height: 100vh;
+            min-width: 100vw;
+            max-width: 100vw;
+            overflow: hidden;
+            ">
+            <div class="game">
+                <header>
+                    <div class="score">
+                        <p>Score : <span id="outScore">0</span></p>
+                    </div>
+                    <div class="crosshair-toggle">
+                        <a onclick="toggleCrossHair()">
+                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M18.225 0C17.6037 0 17.1 0.50368 17.1 1.125V2.27528C9.11814 2.72494 2.72494 9.11814 2.27528 17.1H1.125C0.50368 17.1 0 17.6037 0 18.225C0 18.8463 0.503679 19.35 1.125 19.35H2.30705C2.96672 27.121 9.26872 33.2835 17.1 33.7247V34.875C17.1 35.4963 17.6037 36 18.225 36C18.8463 36 19.35 35.4963 19.35 34.875V33.693C26.9715 33.046 33.046 26.9715 33.693 19.35H34.875C35.4963 19.35 36 18.8463 36 18.225C36 17.6037 35.4963 17.1 34.875 17.1H33.7247C33.2835 9.26872 27.121 2.96672 19.35 2.30705V1.125C19.35 0.50368 18.8463 0 18.225 0ZM19.35 29.475V31.3321C25.6723 30.6996 30.6996 25.6723 31.3321 19.35H29.475C28.8537 19.35 28.35 18.8463 28.35 18.225C28.35 17.6037 28.8537 17.1 29.475 17.1H31.3695C30.9363 10.5676 25.8216 5.31537 19.35 4.66791V6.525C19.35 7.14632 18.8463 7.65 18.225 7.65C17.6037 7.65 17.1 7.14632 17.1 6.525V4.63049C10.4169 5.07372 5.07372 10.4169 4.63049 17.1H6.525C7.14632 17.1 7.65 17.6037 7.65 18.225C7.65 18.8463 7.14632 19.35 6.525 19.35H4.66791C5.31537 25.8216 10.5676 30.9363 17.1 31.3695V29.475C17.1 28.8537 17.6037 28.35 18.225 28.35C18.8463 28.35 19.35 28.8537 19.35 29.475ZM18 19.8C18.9941 19.8 19.8 18.9941 19.8 18C19.8 17.0059 18.9941 16.2 18 16.2C17.0059 16.2 16.2 17.0059 16.2 18C16.2 18.9941 17.0059 19.8 18 19.8Z" fill="white"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="timer">
+                        <p>Timer : <span id="outTimer">00</span></p>
+                    </div>
+                </header>
+                <main>
+                    <div class="bGame">
+                        <div class="left-col">
+                            <p class="nHigh" style="display: none;">New Highscore</p>
+                            <span id="finalScore" style="display: none;">42063</span>
+                            <input style="display: none;" required type="text" placeholder="Enter Name" maxlength="12" id="playerName"/>
+                            <a class="submitName" onclick="linkNameToScore()" style="display: none;">Submit</a>
+                            <a id="startGame" onclick="runGame()">Start</a>
+                        </div>
+                        <div class="right-col" style="display: none;">
+                            <ul class="scoreboard">
+                                <li>
+                                    <p class="scoreboard-placement">1<span>st</span></p>
+                                    <p class="scoreboard-name">Edward</p>
+                                    <p class="scoreboard-score">42069</p>
+                                </li>
+                                <li>
+                                    <p class="scoreboard-placement">2<span>nd</span></p>
+                                    <p class="scoreboard-name">Random</p>
+                                    <p class="scoreboard-score">42063</p>
+                                </li>
+                                <li>
+                                    <p class="scoreboard-placement">3<span>rd</span></p>
+                                    <p class="scoreboard-name">Random</p>
+                                    <p class="scoreboard-score">42063</p>
+                                </li>
+                                <li>
+                                    <p class="scoreboard-placement">4<span>th</span></p>
+                                    <p class="scoreboard-name">Random</p>
+                                    <p class="scoreboard-score">42063</p>
+                                </li>
+                                <li>
+                                    <p class="scoreboard-placement">5<span>th</span></p>
+                                    <p class="scoreboard-name">Random</p>
+                                    <p class="scoreboard-score">42063</p>
+                                </li>
+                                <li>
+                                    <p class="scoreboard-placement">6<span>th</span></p>
+                                    <p class="scoreboard-name">Random</p>
+                                    <p class="scoreboard-score">42063</p>
+                                </li>
+                                <li>
+                                    <p class="scoreboard-placement">7<span>th</span></p>
+                                    <p class="scoreboard-name">Random</p>
+                                    <p class="scoreboard-score">42063</p>
+                                </li>
+                                <li>
+                                    <p class="scoreboard-placement">8<span>th</span></p>
+                                    <p class="scoreboard-name">Random</p>
+                                    <p class="scoreboard-score">42063</p>
+                                </li>
+                                <li>
+                                    <p class="scoreboard-placement">9<span>th</span></p>
+                                    <p class="scoreboard-name">Random</p>
+                                    <p class="scoreboard-score">42063</p>
+                                </li>
+                                <li>
+                                    <p class="scoreboard-placement">10<span>th</span></p>
+                                    <p class="scoreboard-name">Random</p>
+                                    <p class="scoreboard-score">42063</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="game-target"><a style="display: none;" id="hitBox"></a></div>
+                </main>
+                <footer class="crosshair-options" style="display: none;">
+                    <ul class="crosshair-option-style">
+                        <li class="active">
+                            <a onclick="changeCrossHair(this)" cross="v1">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path class="cross-hair" d="M26 20H24V24H20V26H24V30H26V26H30V24H26V20Z" fill="black"/>
+                                </svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="changeCrossHair(this)" cross="v2">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M26 18H24V23H26V18ZM26 27H24V32H26V27ZM27 26V24H32V26H27ZM18 24V26H23V24H18Z" fill="black"/>
+                                </svg>                                
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="changeCrossHair(this)" cross="v3">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M27.5 22V22.5L28 22.5L28 27.5H27.5V28H22.5L22.5 27.5H22V22.5H22.5L22.5 22H27.5ZM24 24V26L26 26L26 24L24 24Z" fill="black"/>
+                                </svg>                                
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="changeCrossHair(this)" cross="v4">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M24 18H26V22H27.5V22.5H28V24H32V26H28V27.5H27.5V28H26V32H24V28H22.5V27.5H22V26H18V24H22V22.5H22.5V22H24V18ZM24 26V24H26V26H24Z" fill="black"/>
+                                </svg>                                
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="changeCrossHair(this)" cross="v5">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M26 21H25V23H26V21ZM26 26H25V28H26V26ZM22 25V24H24V25H22ZM27 24V25H29V24H27Z" fill="black"/>
+                                </svg>                                
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="changeCrossHair(this)" cross="v6">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M29.9997 25.7142C29.9941 27.744 29.9371 28.8124 29.3748 29.3748C28.8124 29.9371 27.744 29.9941 25.7142 29.9997C25.4883 30.0003 25.2504 29.9997 25 29.9997C24.7496 29.9997 24.5117 30.0003 24.2858 29.9997C22.256 29.9941 21.1876 29.9371 20.6252 29.3748C20.0629 28.8124 20.0059 27.744 20.0003 25.7142C19.9997 25.4883 20.0003 25.2504 20.0003 25C20.0003 24.7496 19.9997 24.5117 20.0003 24.2858C20.0059 22.256 20.0629 21.1876 20.6252 20.6252C21.1876 20.0629 22.256 20.0059 24.2858 20.0003C24.5117 19.9997 24.7496 20.0003 25 20.0003C25.2504 20.0003 25.4883 19.9997 25.7142 20.0003C27.744 20.0059 28.8124 20.0629 29.3748 20.6252C29.9371 21.1876 29.9941 22.256 29.9997 24.2858C30.0003 24.5117 29.9997 24.7496 29.9997 25C29.9997 25.2504 30.0003 25.4883 29.9997 25.7142ZM28.4998 25.7142C28.2158 27.1135 27.1135 28.2158 25.7142 28.4998V27.1427H24.2858V28.4998C22.8865 28.2158 21.7842 27.1135 21.5002 25.7142H22.8573V24.2858H21.5002C21.7842 22.8865 22.8865 21.7842 24.2858 21.5002V22.8573H25.7142V21.5002C27.1135 21.7842 28.2158 22.8865 28.4998 24.2858H27.1427V25.7142H28.4998Z" fill="black"/>
+                                </svg>                                                                                                    
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="changeCrossHair(this)" cross="v7">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M26 21H25V23H26V21ZM26 26H25V28H26V26ZM21 25V24H24V25L21 25ZM27 24V25L30 25V24H27Z" fill="black"/>
+                                </svg>                                
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="changeCrossHair(this)" cross="v8">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M25 21H26V23.0853C26.4262 23.236 26.764 23.5738 26.9147 24H28V25H26.9147C26.764 25.4262 26.4262 25.764 26 25.9147V28H25V25.9147C24.5738 25.764 24.236 25.4262 24.0853 25H23V24H24.0853C24.236 23.5738 24.5738 23.236 25 23.0853V21Z" fill="black"/>
+                                </svg>    
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="changeCrossHair(this)" cross="v9">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="25.5" cy="24.5" r="2.5" fill="black"/>
+                                </svg>                                
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="changeCrossHair(this)" cross="v10">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M23.417 12V20.3333H27.5837V12L23.417 12Z" fill="black"/>
+                                    <path d="M13 22.4168H21.3333V26.5835H13V22.4168Z" fill="black"/>
+                                    <path d="M29.667 22.4168H38.0003V26.5835H29.667V22.4168Z" fill="black"/>
+                                    <path d="M23.417 37.0001V28.6667L27.5837 28.6667V37.0001H23.417Z" fill="black"/>
+                                    <path d="M25.5 27.0001C26.8807 27.0001 28 25.8808 28 24.5001C28 23.1194 26.8807 22.0001 25.5 22.0001C24.1193 22.0001 23 23.1194 23 24.5001C23 25.8808 24.1193 27.0001 25.5 27.0001Z" fill="black"/>
+                                </svg>                                
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="crosshair-option-color">
+                        <li>
+                            <a class="white" color="FFF" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="red" color="FF0000" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="red-orange" color="FF4600" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="orange" color="FF7F00" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="orange-yellow" color="FEB300" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="yellow" color="FFFF00" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="yellow-green" color="00FF00" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="green" color="007900" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="green-blue" color="00AEAE" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="blue" color="0000FF" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="blue-violet" color="7308A5" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="violet" color="BA00FF" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                        <li>
+                            <a class="black" color="000" onclick="changeCrossHairColor(this)"></a>
+                        </li>
+                    </ul>
+                </footer>
+            </div>
+        </div>
+    </body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/main.js"></script>
+</html>

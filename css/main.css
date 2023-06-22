@@ -1,0 +1,301 @@
+body{
+    background: #14213D;
+    font-family: 'Exo 2';
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 43px;
+    color: #FFFFFF;
+}
+.game{
+    max-width: 800px;
+    min-width: 800px;
+    position: relative;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+header .score,header .crosshair-toggle,header .timer{
+    flex-basis: 33.33%;
+    width: 33.33%;
+}
+header .crosshair-toggle{
+    text-align: center;
+}
+header .timer {
+    text-align: right;
+}
+header .crosshair-toggle a{
+    cursor: pointer;
+}
+header .crosshair-toggle a.active svg > *{
+    fill: #FCA311;
+}
+header .timer p #outTimer {
+    min-width: 60px;
+    display: inline-block;
+    text-align: right;
+}
+main{
+    max-height: 500px;
+    min-height: 500px;
+    background: #E5E5E5;
+    border: 5px solid rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    position: relative;
+    cursor: url('../img/crosshairs/crosshair-v1-000.svg'), crosshair;
+}
+main .bGame{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    display: flex;
+}
+.bGame .left-col,.bGame .right-col{
+    flex-basis: 100%;
+}
+.left-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 15px;
+    padding: 40px;
+}
+.left-col .nHigh{
+    color: #000;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.10em;
+}
+.left-col #finalScore{
+    background: #14213D;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left-col #playerName{
+    border: none;
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 29px;
+    /* identical to box height */
+
+    text-align: center;
+    letter-spacing: 0.12em;
+    background: #D9D9D9;
+    color: #000000;
+    height: 65px;
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    outline: none;
+}
+.right-col{
+    padding: 40px;
+    background: #D9D9D9;
+}
+.right-col{
+
+}
+.scoreboard{
+
+}
+.scoreboard li:nth-child(1){
+    background: #FCA311;
+    border-radius: 5px;
+    padding: 15px;
+    width: calc(100% - 30px);
+    margin-bottom: 10px;
+}
+.scoreboard li:nth-child(1) .scoreboard-placement{
+    background: #14213D;
+    color: #fff;
+    font-size: 20px;
+    line-height: 24px;
+    width: 35px;
+    height: 35px;
+}
+.scoreboard li:nth-child(1) .scoreboard-placement span{
+    font-size: 10px;
+    line-height: 12px;
+    margin-left: 3px;
+}
+.scoreboard li:nth-child(1) .scoreboard-name,
+.scoreboard li:nth-child(1) .scoreboard-score{
+    font-size: 20px;
+    line-height: 24px;
+}
+.scoreboard li{
+    display: flex;
+    align-items: center;
+    padding: 0 15px 10px 15px;
+}
+.scoreboard li .scoreboard-placement{
+    background: #E5E5E5;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    margin-right: 5px;
+}
+.scoreboard-placement span{
+    font-size: 8px;
+    margin: 6px 0 0 1px;
+}
+.scoreboard-name,.scoreboard-score{
+    font-family: 'Exo 2';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: 0.12em;
+    color: #000000;
+}
+.scoreboard-score{
+margin-left: auto;
+}
+main .bGame a{
+    font-family: 'Exo 2';
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 43px;
+    letter-spacing: 0.12em;
+    color: #000000;
+    /* padding: 10px 100px; */
+    background: #FCA311;
+    border-radius: 5px;
+    cursor: inherit;
+    -moz-user-select: -moz-none;
+   -khtml-user-select: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   width: 100%;
+   max-width: 300px;
+   height: 65px;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+ain .bGame a:hover{
+    color: #fff;
+}
+footer{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 10px);
+    padding: 0 5px;
+    bottom: 5px;
+    z-index: 20;
+}
+footer ul{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+footer ul a{
+    display: block;
+    cursor: pointer;
+}
+footer .crosshair-option-style{
+    background: #D9D9D9;
+}
+footer .crosshair-option-style li{
+    width: 100%;
+}
+footer .crosshair-option-style li a{
+    display: flex;
+    justify-content: center;
+}
+footer .crosshair-option-style li.active a,
+footer .crosshair-option-style li a:hover{
+    border-top: 5px solid slategray
+}
+footer .crosshair-option-color li{
+    width: 100%;
+}
+footer .crosshair-option-color li a{
+    height: 50px;
+    min-width: 50px;
+    width: 100%;
+}
+.white{
+    background: #fff;
+}
+.red{
+    background-color: #FF0000;
+}
+.red-orange{
+    background: #FF4600
+}
+.orange{
+    background: #FF7F00;
+}
+.orange-yellow{
+    background: #FEB300;
+}
+.yellow{
+    background: #FFFF00;
+}
+.yellow-green{
+    background: #00FF00;
+}
+.green{
+    background: #007900;
+}
+.green-blue{
+    background: #00AEAE;
+}
+.blue{
+    background: #0000FF;
+}
+.blue-violet{
+    background: #7308A5;
+}
+.violet{
+    background: #BA00FF;
+}
+.black{
+    background: #000;
+}
+.game-target{
+    position: absolute;
+    width: calc(100% - 80px);
+    height: calc(100% - 80px);
+    margin: 40px;
+}
+.game-target #hitBox{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #FCA311;
+    display: block;
+    position: absolute;
+    background: radial-gradient(circle at 2px 2px, #FCA311, #9f7530)
+}
+/* .game-target #hitBox:hover{
+    background: #ee660b;
+} */
